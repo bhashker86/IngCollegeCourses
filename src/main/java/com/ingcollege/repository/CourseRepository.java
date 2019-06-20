@@ -9,7 +9,7 @@ import com.ingcollege.entity.Course;
 @Repository
 public interface CourseRepository extends JpaRepository<Course,Long>{
 
- @Query(value="select c from Course c where c.courseId=?1")
+ //@Query(value="select c from Course c where c.courseId=?1")
  public Course findByCourseId(Long courseId);	
 	
 }

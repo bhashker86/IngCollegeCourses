@@ -71,7 +71,7 @@ public class User implements Serializable{
 	}
 
 	public void setCourse(Course courses) {
-		this.course = course;
+		this.course = courses;
 	}
 	
 	

@@ -24,8 +24,8 @@ public class LoginController {
 	public ResponseEntity<UserResponseDTO> validateLogin(@RequestBody UserLoginDTO UserLoginDTO) {
 		
 		UserResponseDTO userResponseDTO = loginService.validateLogin(UserLoginDTO);
-		//if(userResponseDTO==null)
-			//return new ResponseEntity<>(userResponseDTO, HttpStatus.PRECONDITION_FAILED);
+		if(userResponseDTO==null)
+			return new ResponseEntity<>(userResponseDTO, HttpStatus.PRECONDITION_FAILED);
 			
 		return new ResponseEntity<>(userResponseDTO, HttpStatus.OK);
 	}
