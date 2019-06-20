@@ -21,7 +21,7 @@ import com.ingcollege.repository.CourseRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CoursesServiceImplTest {
+public class CourseServiceImplTest {
 
 	@InjectMocks
 	CourseServiceImpl coursesServiceImpl;

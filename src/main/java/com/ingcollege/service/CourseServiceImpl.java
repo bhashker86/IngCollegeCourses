@@ -45,12 +45,6 @@ public class CourseServiceImpl implements CourseService {
 		User user=userRepositroy.findByStudentId(studentId);
 				
 		Course course=courseRepository.findByCourseId(courseId);
-		
-//		if(course==null) {
-//			throw new CourseNotFoundException("Course  with courseId: "+courseId+ " Not found");
-//		}
-//		
-				
 		user.setCourse(course);
 		userRepositroy.save(user);
 		
