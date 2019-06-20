@@ -31,7 +31,7 @@ public class CoursesControllerTest {
 	MockMvc mockMvc;
 
 	@Mock
-	CourseService courseService;
+	CourseService coursesService;
 
 	@InjectMocks
 	CoursesController pc;
@@ -46,24 +46,24 @@ public class CoursesControllerTest {
 		coursesDto.setCourseDuration("6 Months");
 		coursesDto.setCourseLevel("Advance Beginner");
 		coursesDto.setProfessor("Dr.Jason Daniel");
-		//coursesDto.setCourseFee(0.0);
-		//coursesDto.setCourseStartDate("26-06-2019");
-		List<CourseDTO> courseDtos = new ArrayList<>();
+		coursesDto.setCourseFee(0L);
+		coursesDto.setCourseStartDate(null);
+		List<CourseDTO> coursesDtos = new ArrayList<>();
 
-		//courseDtos.add(courseDto);
+		coursesDtos.add(coursesDto);
 
-		Mockito.when(courseService.findAllCourses()).thenReturn(courseDtos);
+		Mockito.when(coursesService.findAllCourses()).thenReturn(coursesDtos);
 		List<CourseDTO> test = pc.getAllCourses().getBody();
-//		assertEquals(coursesDto.getCourseName(), test.get(0).getCourseName());
-//		assertEquals(coursesDto.getCourseDuration(), test.get(0).getCourseDuration());
-//		assertEquals(coursesDto.getCourseFee(), test.get(0).getCourseFee());
-//		assertEquals(coursesDto.getCourseId(), test.get(0).getCourseId());
-//		assertEquals(coursesDto.getProfessor(), test.get(0).getProfessor());
-//		assertEquals(coursesDto.getCourseLevel(), test.get(0).getCourseLevel());
-//		assertEquals(coursesDto.getCourseStartDate(), test.get(0).getCourseStartDate());
-//		assertEquals(coursesDto.getCourseCode(), test.get(0).getCourseCode());
+		assertEquals(coursesDto.getCourseName(), test.get(0).getCourseName());
+		assertEquals(coursesDto.getCourseDuration(), test.get(0).getCourseDuration());
+		assertEquals(coursesDto.getCourseFee(), test.get(0).getCourseFee());
+		assertEquals(coursesDto.getCourseId(), test.get(0).getCourseId());
+		assertEquals(coursesDto.getProfessor(), test.get(0).getProfessor());
+		assertEquals(coursesDto.getCourseLevel(), test.get(0).getCourseLevel());
+		assertEquals(coursesDto.getCourseStartDate(), test.get(0).getCourseStartDate());
+		assertEquals(coursesDto.getCourseCode(), test.get(0).getCourseCode());
 
-		Mockito.verify(courseService, Mockito.times(1)).findAllCourses();
+		Mockito.verify(coursesService, Mockito.times(1)).findAllCourses();
 	}
 
 	protected String mapToJson(Object obj) throws JsonProcessingException {
