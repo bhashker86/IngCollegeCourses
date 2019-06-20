@@ -31,8 +31,7 @@ public class User implements Serializable{
 	
 	@OneToOne( fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	@JoinColumn(name="courseId")
-	private Courses courses;
-
+	private Course course;
 	
 	public Long getStudentId() {
 		return studentId;
@@ -42,11 +41,11 @@ public class User implements Serializable{
 	}
 	
 	
-	public Long getId() {
-		return id;
+	public Long getUserId() {
+		return userId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 	
 	public String getPassword() {
@@ -63,16 +62,16 @@ public class User implements Serializable{
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
 	}
-	public User(Long id) {
+	public User(Long userId) {
 		super();
-		this.id = id;
+		this.userId = userId;
 	}
-	public Courses getCourses() {
-		return courses;
+	public Course getCourse() {
+		return course;
 	}
 
-	public void setCourses(Courses courses) {
-		this.courses = courses;
+	public void setCourse(Course courses) {
+		this.course = course;
 	}
 	
 	
@@ -85,7 +84,7 @@ public class User implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", studentId=" + studentId + ", password=" + password + ", course=" + course + "]";
+		return "User [id=" + userId + ", studentId=" + studentId + ", password=" + password + ", course=" + course + "]";
 	}
 }
 

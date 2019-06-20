@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ingcollege.dto.CoursesDTO;
-import com.ingcollege.service.CoursesService;
+import com.ingcollege.dto.CourseDTO;
+import com.ingcollege.service.CourseService;
+
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(allowedHeaders={"*", "*/"}, origins={"*", "*/"})
@@ -22,12 +23,12 @@ public class CoursesController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CoursesController.class);
 
 	@Autowired
-	private CoursesService coursesService;
+	private CourseService courseService;
 	
 	@GetMapping("/courses")
-	public ResponseEntity<List<CoursesDTO>> getAllCourses(){
+	public ResponseEntity<List<CourseDTO>> getAllCourses(){
 		LOGGER.debug("getAllCourses");
-		List<CoursesDTO> coursesDto = coursesService.findAllCourses();
+		List<CourseDTO> coursesDto = courseService.findAllCourses();
 		return new ResponseEntity<>(coursesDto, HttpStatus.OK);
 	}
 

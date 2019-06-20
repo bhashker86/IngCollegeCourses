@@ -1,5 +1,9 @@
 package com.ingcollege.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,14 +14,28 @@ import com.ingcollege.exception.CourseNotFoundException;
 import com.ingcollege.exception.UserNotFoundException;
 import com.ingcollege.repository.CourseRepository;
 import com.ingcollege.repository.UserRepositroy;
+import com.ingcollege.service.CourseService;
 
 @Service 
 public class CourseServiceImpl implements CourseService {
 	
 	@Autowired
 	private CourseRepository courseRepository;
+	
 	@Autowired
 	private UserRepositroy userRepositroy;
+	
+	public List<CourseDTO> findAllCourses() {
+		//LOGGER.debug("findAllCourses");
+		List<CourseDTO> courseDtos = new ArrayList<>();
+		List<Course> courses = courseRepository.findAll();
+		for(Course course:courses) {
+			CourseDTO courseDto = new CourseDTO();
+			BeanUtils.copyProperties(course, courseDto);
+			courseDtos.add(courseDto);
+		}
+		return courseDtos;
+	}
 	
 	
 	
