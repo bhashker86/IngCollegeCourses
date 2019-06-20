@@ -1,29 +1,16 @@
 package com.ingcollege.dto;
 
-import java.io.Serializable;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
-
-public class CoursesDTO  {
-
-	@Id 
-	@GeneratedValue(strategy = GenerationType.AUTO)
+public class RegisterCoursesDTO {
 	private Long courseId;
 	private String courseName;
 	private String courseCode;
 	private String courseDuration;
 	private String courseLevel;
 	private String professor;
-	private Double courseFee;
+	private Integer courseFee;
 	private String courseStartDate;
+	private Long studentId;
+	
 	public Long getCourseId() {
 		return courseId;
 	}
@@ -60,10 +47,10 @@ public class CoursesDTO  {
 	public void setProfessor(String professor) {
 		this.professor = professor;
 	}
-	public Double getCourseFee() {
+	public Integer getCourseFee() {
 		return courseFee;
 	}
-	public void setCourseFee(Double courseFee) {
+	public void setCourseFee(Integer courseFee) {
 		this.courseFee = courseFee;
 	}
 	public String getCourseStartDate() {
@@ -72,29 +59,11 @@ public class CoursesDTO  {
 	public void setCourseStartDate(String courseStartDate) {
 		this.courseStartDate = courseStartDate;
 	}
-	@Override
-	public String toString() {
-		return "CoursesDto [courseId=" + courseId + ", courseName=" + courseName + ", courseCode=" + courseCode
-				+ ", courseDuration=" + courseDuration + ", courseLevel=" + courseLevel + ", professor=" + professor
-				+ ", courseFee=" + courseFee + ", courseStartDate=" + courseStartDate + "]";
+	public Long getStudentId() {
+		return studentId;
 	}
-	public CoursesDTO(Long courseId, String courseName, String courseCode, String courseDuration, String courseLevel,
-			String professor, Double courseFee, String courseStartDate) {
-		super();
-		this.courseId = courseId;
-		this.courseName = courseName;
-		this.courseCode = courseCode;
-		this.courseDuration = courseDuration;
-		this.courseLevel = courseLevel;
-		this.professor = professor;
-		this.courseFee = courseFee;
-		this.courseStartDate = courseStartDate;
-	}
-	public CoursesDTO() {
-		super();
-		// TODO Auto-generated constructor stub
+	public void setStudentId(Long studentId) {
+		this.studentId = studentId;
 	}
 	
-	
-
 }
