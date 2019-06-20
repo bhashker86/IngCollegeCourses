@@ -1,16 +1,16 @@
-package com.ingcollege.ingcollege;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class IngcollegeApplicationTests {
-
-	@Test
-	public void contextLoads() {
-	}
-
-}
+//package com.ingcollege.ingcollege;
+//
+//import org.junit.Test;
+//import org.junit.runner.RunWith;
+//import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.test.context.junit4.SpringRunner;
+//
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
+//public class IngcollegeApplicationTests {
+//
+//	@Test
+//	public void contextLoads() {
+//	}
+//
+//}
